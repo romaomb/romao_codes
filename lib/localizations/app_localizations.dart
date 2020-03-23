@@ -34,12 +34,8 @@ class AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
   }
 
   @override
-  Future<AppLocalizations> load(Locale locale) {
-    return AppLocalizations.load(locale);
-  }
+  Future<AppLocalizations> load(Locale locale) => AppLocalizations.load(locale);
 
   @override
-  bool shouldReload(LocalizationsDelegate<AppLocalizations> old) {
-    return false;
-  }
+  bool shouldReload(LocalizationsDelegate<AppLocalizations> old) => false;
 }
