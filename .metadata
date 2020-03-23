@@ -7,4 +7,4 @@ version:
   revision: 8c0b43bda4e5ff29d399f06ce1c0e1027268d6b5
   channel: master
 
-project_type: app
+project_type: scenes.app
