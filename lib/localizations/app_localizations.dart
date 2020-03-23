@@ -3,9 +3,10 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:romao_codes/localizations/generated/messages_all.dart';
-import 'package:romao_codes/resources/constants.dart' as Constants;
 
 class AppLocalizations {
+  static const supportedLanguages = ['en', 'pt'];
+
   static Future<AppLocalizations> load(Locale locale) {
     final String name =
         locale.countryCode == null ? locale.languageCode : locale.toString();
@@ -20,6 +21,8 @@ class AppLocalizations {
   static AppLocalizations of(BuildContext context) {
     return Localizations.of<AppLocalizations>(context, AppLocalizations);
   }
+
+  String get appName => Intl.message('romao.codes');
 }
 
 class AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
@@ -27,7 +30,7 @@ class AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
 
   @override
   bool isSupported(Locale locale) {
-    return Constants.supportedLanguages.contains(locale.languageCode);
+    return AppLocalizations.supportedLanguages.contains(locale.languageCode);
   }
 
   @override
